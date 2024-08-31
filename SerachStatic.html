@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced E-Commerce Page</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .search-form {
+            display: flex;
+            justify-content: center;
+            margin-left: auto;
+        }
+
+        .ipt {
+            width: 360px;
+            height: 40px;
+            border-radius: 20px;
+            padding-left: 10px;
+            border: 1px solid #ced4da;
+            margin-right: 10px;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card-item {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: #ffffff;  
+            text-align: center;  
+        }
+
+        .card-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-img-top {
+            width: 57%;  
+            height: 200px;  
+            
+        }
+
+        .card-body {
+            padding: 15px;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+
+        .card-text {
+            font-size: 0.875rem;
+            color: #6c757d;
+        }
+
+        .card-footer {
+            background-color: #f8f9fa;
+            border-top: 1px solid #dee2e6;
+            text-align: right;
+            padding: 10px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <form class="search-form" role="search">
+                <input id="searchInput" class="ipt" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-primary" type="button" onclick="searchItems()">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="grid">
+        <!-- Card 1: Watch -->
+        <div class="card-item">
+            <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTe37M6Ujeqwt7hsOFIOVV5wHrxUY-c2OUlZz1zEc3j27ugIJ4KQUEp7F_ePas5p_WGmOJscc2UMlen29hFstH8BZ2LNXh6iD1MMGH8f2AvG04RTShpUZpUI4w" class="card-img-top" alt="Watch">
+            <div class="card-body">
+                <h5 class="card-title">Elegant Watch</h5>
+                <p class="card-text">A stylish and modern watch suitable for any occasion.</p>
+            </div>
+            <div class="card-footer">
+                <a href="#" class="btn btn-primary">View Details</a>
+            </div>
+        </div>
+
+        <!-- Card 2: Clothing -->
+        <div class="card-item">
+            <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQTfuNyUr4aoBdVuVbh0ZLEUSO9p4j5PRt7YwYYSlB8ngjSmzwPUmh0Yg0HdT-V7Ch4fL33w_mQe4fsTA86pNQs6cHK89QphLHTNZe5vZk" class="card-img-top" alt="Clothing">
+            <div class="card-body">
+                <h5 class="card-title">Trendy Clothing</h5>
+                <p class="card-text">Explore our latest collection of trendy clothing for all seasons.</p>
+            </div>
+            <div class="card-footer">
+                <a href="#" class="btn btn-primary">View Details</a>
+            </div>
+        </div>
+
+        <!-- Card 3: Shirt for Men -->
+        <div class="card-item">
+            <img src="https://images.meesho.com/images/products/142503072/rticj_1200.jpg" class="card-img-top" alt="Shirt for Men">
+            <div class="card-body">
+                <h5 class="card-title">Men's Shirt</h5>
+                <p class="card-text">A comfortable and stylish shirt for men, available in various colors.</p>
+            </div>
+            <div class="card-footer">
+                <a href="https://www.amazon.in/Generic-Women-Formal-Georgette-Shirt/dp/B09RXR55KT" class="btn btn-primary">View Details</a>
+            </div>
+        </div>
+
+        <!-- Card 4: Shirt for Women -->
+        <div class="card-item">
+            <img src="https://m.media-amazon.com/images/I/71QOhw6WJxL._AC_UY1100_.jpg" class="card-img-top" alt="Shirt for Women">
+            <div class="card-body">
+                <h5 class="card-title">Women's Shirt</h5>
+                <p class="card-text">Elegant and fashionable shirt for women, perfect for any occasion.</p>
+            </div>
+            <div class="card-footer">
+                <a href="#" class="btn btn-primary">View Details</a>
+            </div>
+        </div>
+        
+        <!-- Card 5: Accessories -->
+        <div class="card-item">
+            <img src="https://assets.ajio.com/medias/sys_master/root/20220505/LCwK/62735877aeb26921af5599a6/-473Wx593H-462640257-green-MODEL.jpg" class="card-img-top" alt="Accessories">
+            <div class="card-body">
+                <h5 class="card-title">Fashion Accessories</h5>
+                <p class="card-text">A range of accessories to complement your wardrobe.</p>
+            </div>
+            <div class="card-footer">
+                <a href="#" class="btn btn-primary">View Details</a>
+            </div>
+        </div>
+
+        <!-- Card 6: Casual Wear -->
+        <div class="card-item">
+            <img src="https://images.meesho.com/images/products/341597666/fvemt_512.webp" class="card-img-top" alt="Casual Wear">
+            <div class="card-body">
+                <h5 class="card-title">Casual Wear</h5>
+                <p class="card-text">Comfortable and stylish casual wear for everyday use.</p>
+            </div>
+            <div class="card-footer">
+                <a href="#" class="btn btn-primary">View Details</a>
+            </div>
+        </div>
+
+        <!-- Additional Cards -->
+        <div class="card-item">
+            <img src="https://m.media-amazon.com/images/I/71snht4ZY+L.jpg" class="card-img-top" alt="Computer">
+            <div class="card-body">
+                <h5 class="card-title">Computer</h5>
+                <p class="card-text">A powerful and versatile computer for all your needs.</p>
+            </div>
+            <div class="card-footer">
+                <a href="#" class="btn btn-primary">View Details</a>
+            </div>
+        </div>
+
+        <div class="card-item">
+            <img src="https://m.media-amazon.com/images/I/41RbCADklWL._AC_.jpg" class="card-img-top" alt="Computer">
+            <div class="card-body">
+                <h5 class="card-title">Computer</h5>
+                <p class="card-text">A reliable and high-performance computer for professionals.</p>
+            </div>
+            <div class="card-footer">
+                <a href="#" class="btn btn-primary">View Details</a>
+            </div>
+        </div>
+
+        <div class="card-item">
+            <img src="https://cdn.britannica.com/77/170477-050-1C747EE3/Laptop-computer.jpg" class="card-img-top" alt="Laptop">
+            <div class="card-body">
+                <h5 class="card-title">Laptop</h5>
+                <p class="card-text">A portable and efficient laptop for on-the-go productivity.</p>
+            </div>
+            <div class="card-footer">
+                <a href="#" class="btn btn-primary">View Details</a>
+            </div>
+        </div>
+
+        <div class="card-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCQzu8sopjHoDNaN1HrZKcKH5jxjcj7w389YjJAqOQ_iMtEUdb86IA1QfhYAvUI0UUtoM&usqp=CAU" class="card-img-top" alt="Laptop">
+            <div class="card-body">
+                <h5 class="card-title">Laptop</h5>
+                <p class="card-text">High-performance laptop with advanced features.</p>
+            </div>
+            <div class="card-footer">
+                <a href="#" class="btn btn-primary">View Details</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function searchItems() {
+            const query = document.getElementById('searchInput').value.toLowerCase().trim();
+
+            if (!query) {
+                document.querySelectorAll('.card-item').forEach(card => card.classList.remove('hidden'));
+                return;
+            }
+
+            const cards = document.querySelectorAll('.card-item');
+
+            function matches(text, query) {
+                return text.toLowerCase().includes(query);
+            }
+
+            cards.forEach(card => {
+                const title = card.querySelector('.card-title').textContent;
+                const description = card.querySelector('.card-text').textContent;
+
+                if (matches(title, query) || matches(description, query)) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
+
+        document.getElementById('searchInput').addEventListener('input', searchItems);
+    </script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
